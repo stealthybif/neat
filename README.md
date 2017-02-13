@@ -1,2 +1,2 @@
-# neat
-Scripts for NEAT project
+# NEAT Study
+Scripts created specifically for the NEAT project
