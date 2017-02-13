@@ -149,6 +149,7 @@ fi
 
 if [ -e ${sub}-T2w_SPC_scan1*nonorm*nii.gz ]; then
 	echo "Found `ls ${sub}-T2w_SPC_scan1*nonorm*nii.gz` will rename to ${sub}-t2w_scan1_nonorm.nii.gz"
+	mv ${sub}-T2w_SPC_scan1*nonorm*nii.gz ${sub}-t2w_scan1_nonorm.nii.gz
 fi
 
 if [ -e ${sub}-T2w_SPC_scan1*nii.gz ]; then
