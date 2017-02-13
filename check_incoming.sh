@@ -158,7 +158,7 @@ do
 			rm `ls -r ${odir}/*${scan}* | grep -v 'Crop'`
 			echo "Renaming ${scan}..."
 				a=1
-				for x in `ls ${odir}/*${scan}*`
+				for x in `ls ${odir}/*${scan}_scan1*`
 				do
 					if [ $a == 1 ]; then 
 					mv ${x} ${x%%.*}_nonorm.nii.gz
@@ -180,7 +180,7 @@ do
 			rm `ls -r ${odir}/*${scan}* | grep -v 'Crop'`
 			echo "Renaming ${scan}..."
 				a=1
-				for x in `ls ${odir}/*${scan}*`
+				for x in `ls ${odir}/*${scan}_scan1*`
 				do
 					if [ $a == 1 ]; then 
 					mv ${x} ${x%%.*}_nonorm.nii.gz
@@ -251,7 +251,7 @@ do
 			rm `ls -r ${odir}/*${scan}* | grep -v 'Crop'`
 			echo "Renaming ${scan}..."
 				a=1
-				for x in `ls ${odir}/*${scan}*`
+				for x in `ls ${odir}/*${scan}_scan2*`
 				do
 					if [ $a == 1 ]; then 
 					mv ${x} ${x%%.*}_nonorm.nii.gz
@@ -273,7 +273,7 @@ do
 			rm `ls -r ${odir}/*${scan}* | grep -v 'Crop'`
 			echo "Renaming ${scan}..."
 				a=1
-				for x in `ls ${odir}/*${scan}*`
+				for x in `ls ${odir}/*${scan}_scan2*`
 				do
 					if [ $a == 1 ]; then 
 					mv ${x} ${x%%.*}_nonorm.nii.gz
