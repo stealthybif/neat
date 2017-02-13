@@ -138,7 +138,7 @@ echo "################################"
 echo "# Would you like to convert the data to NIFTI (y or n)?"
 echo "################################"
 read resp
-if [ ! ${resp} == y ] && [ ! ${resp} == Y ]; then echo "OK, exiting..."; exit; else 
+if [ ${resp} == y ] || [ ${resp} == Y ]; then  
 
 
 #tmpscan1 is list of scans flagged OK for dcm2niix conversion
@@ -192,13 +192,15 @@ do
 	fi
 done
 rm tmpscan1
+else
+	echo "Ok, will not convert scan1 contents to NIFTI..."
 fi
 
 #########
 # SCAN 2
 #########
 rm tmpscan2
-# List all scans in scan1 folder
+# List all scans in scan2 folder
 for dirs in `ls -d  scan2/*`
 do 
 	#Get the name of each scan
@@ -209,7 +211,7 @@ do
 	if [ ! -z $expfiles ]; then	
 		#If defined, then test if number of files match the number of expected files (expfiles)
 		if [ `ls scan2/${scan}/*dcm | wc -l` == $expfiles ]; then	
-			ffiles=`ls scan1/${scan}/*dcm | wc -l`
+			ffiles=`ls scan2/${scan}/*dcm | wc -l`
 			printf "OK \t%s\n" "$scan ${ffiles} Found"
 			echo $scan,1 >> tmpscan2
 			else 
@@ -233,7 +235,7 @@ echo "################################"
 echo "# Would you like to convert the data to NIFTI (y or n)?"
 echo "################################"
 read resp
-if [ ! ${resp} == y ] && [ ! ${resp} == Y ]; then echo "OK, exiting..."; exit; else
+if [ ${resp} == y ] || [ ${resp} == Y ]; then
 
 #tmpscan2 is list of scans flagged OK for dcm2niix conversion
 for scans in `cat tmpscan2`		
@@ -286,4 +288,6 @@ do
 	fi
 done
 rm tmpscan2
+else
+	echo "echo "Ok, will not convert scan2 contents to NIFTI..."
 fi
