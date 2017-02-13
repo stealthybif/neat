@@ -138,7 +138,7 @@ echo "################################"
 echo "# Would you like to convert the data to NIFTI (y or n)?"
 echo "################################"
 read resp
-if [ ! ${resp} == y ] && [ ! ${resp} == Y ]; then echo "OK, exiting..."; exit; fi
+if [ ! ${resp} == y ] && [ ! ${resp} == Y ]; then echo "OK, exiting..."; exit; else 
 
 
 #tmpscan1 is list of scans flagged OK for dcm2niix conversion
@@ -192,6 +192,7 @@ do
 	fi
 done
 rm tmpscan1
+fi
 
 #########
 # SCAN 2
@@ -232,7 +233,7 @@ echo "################################"
 echo "# Would you like to convert the data to NIFTI (y or n)?"
 echo "################################"
 read resp
-if [ ! ${resp} == y ] && [ ! ${resp} == Y ]; then echo "OK, exiting..."; exit; fi
+if [ ! ${resp} == y ] && [ ! ${resp} == Y ]; then echo "OK, exiting..."; exit; else
 
 #tmpscan2 is list of scans flagged OK for dcm2niix conversion
 for scans in `cat tmpscan2`		
@@ -285,4 +286,4 @@ do
 	fi
 done
 rm tmpscan2
-
+fi
